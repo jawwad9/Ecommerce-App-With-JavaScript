@@ -9,11 +9,20 @@
 </head>
 <body>
 
-  <!-- 🔝 Header -->
-  <header>
-    <h1>🛍️ Fake Store</h1>
+
+    <!-- 🔝 Header -->
+<header>
+  <h1>🛍️ Fake Store</h1>
+
+  <!-- ✅ Right side buttons + Cart -->
+  <div class="header-buttons">
     <div id="cart-icon">🛒 Cart (<span id="cart-count">0</span>)</div>
-  </header>
+    <button class="btn login-btn"><a href="login.html">Login</a></button>
+    <button class="btn register-btn" id="logoutBtn">Logout</button>
+  </div>
+</header>
+
+
 
   <!-- 🧱 Product Container -->
   <div class="container"></div>
@@ -28,7 +37,16 @@
   </div>
 
 
-  
+  <!-- ✅ Checkout Success Modal -->
+<div id="successModal" class="modal">
+  <div class="modal-content">
+    <h2>✅ Checkout Successfully!</h2>
+    <p id="modalAmount"></p>
+    <button id="closeModal">OK</button>
+  </div>
+</div>
+
+
   <script src="script.js"></script>
 </body>
 </html>

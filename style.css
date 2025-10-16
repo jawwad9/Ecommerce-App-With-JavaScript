@@ -14,26 +14,74 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
+  flex-wrap: wrap; /* Responsive layout for small screens */
 }
 
-/* ✅ Cart icon design */
+/* ✅ Right-side section (Cart + Buttons) */
+.header-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* ✅ Cart icon */
 #cart-icon {
   cursor: pointer;
-  font-size: 18px;
+  font-size: 16px;
   background: white;
   color: #007bff;
-  padding: 5px 10px;
+  padding: 6px 10px;
   border-radius: 6px;
   font-weight: bold;
+  transition: 0.3s;
+  margin-top: 8px;
 }
 
-/* ✅ Red circle showing item count */
+#cart-icon:hover {
+  background: #0056b3;
+  color: white;
+}
+
+/* ✅ Cart item count (red bubble) */
 #cart-count {
   background: red;
   color: white;
   border-radius: 50%;
   padding: 2px 6px;
   margin-left: 4px;
+  font-size: 13px;
+}
+
+/* ✅ Buttons (Login + Register) */
+.btn {
+  border: none;
+  border-radius: 6px;
+  padding: 7px 14px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* 🔵 Login button */
+.login-btn {
+  background: white;
+  color: #007bff;
+}
+
+
+.login-btn:hover {
+  background: #0056b3;
+  color: white;
+}
+
+/* 🟢 Register button */
+.register-btn {
+  background: #28a745;
+  color: white;
+}
+
+.register-btn:hover {
+  background: #1e7e34;
 }
 
 /* ✅ Product container layout */
@@ -62,7 +110,7 @@ header {
   object-fit: contain;
 }
 
-/* ✅ Buttons */
+/* ✅ Default button (for products, etc.) */
 button {
   background: #007bff;
   color: white;
@@ -86,23 +134,23 @@ button:hover {
   height: 100vh;
   background: white;
   box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
-  transition: right 0.3s ease; /* Smooth open animation */
+  transition: right 0.3s ease;
   padding: 20px;
   overflow-y: auto;
   z-index: 1000;
 }
 
-/* ✅ When panel is visible */
+/* ✅ When cart panel is visible */
 .cart-panel.show {
   right: 0;
 }
 
+/* ✅ Cart items */
 .cart-panel h3 {
   text-align: center;
   margin-bottom: 15px;
 }
 
-/* ✅ Cart items style */
 .cart-panel #cartItems div {
   border-bottom: 1px solid #ccc;
   margin-bottom: 10px;
@@ -116,7 +164,7 @@ button:hover {
   margin-right: 10px;
 }
 
-/* ✅ Total price text */
+/* ✅ Total price */
 #totalPrice {
   text-align: right;
   font-size: 18px;
@@ -124,7 +172,7 @@ button:hover {
   font-weight: bold;
 }
 
-/* ✅ Checkout button style */
+/* ✅ Checkout button */
 #checkoutBtn {
   background: green;
   color: white;
@@ -141,4 +189,71 @@ button:hover {
   background: darkgreen;
 }
 
+/* ✅ Checkout Modal */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
 
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#closeModal {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+
+/* ✅ Footer Design */
+footer {
+  background: #007bff;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+/* ✅ Footer Links */
+.footer-links {
+  margin-top: 8px;
+}
+
+.footer-links a {
+  color: white;
+  margin: 0 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+  color: #d1e0ff;
+}
+
+
+/* 📱 Responsive header for small screens */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

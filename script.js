@@ -79,20 +79,27 @@ function removeItem(index) {
   showCartItems(); // Refresh list
 }
 
-// ✅ Checkout Button click event
+
+const modal = document.getElementById('successModal');
+const modalAmount = document.getElementById('modalAmount');
+const closeModal = document.getElementById('closeModal');
+
+// ✅ Checkout → Show modal
 checkoutBtn.onclick = () => {
   let total = cart.reduce((sum, item) => sum + item.price, 0);
+  if (cart.length === 0) return alert("🛒 Your cart is empty!");
 
-  if (cart.length === 0) {
-    alert("🛒 Your cart is empty!");
-  } else {
-    alert(`✅ Purchase successful! Total amount: $${total.toFixed(2)}`);
-    cart = []; // Empty the cart
-    localStorage.removeItem('cart');
-    cartCount.textContent = 0;
-    showCartItems();
-  }
+  modalAmount.textContent = `Total Amount: $${total.toFixed(2)}`;
+  modal.style.display = "flex"; // show modal
+
+  cart = [];
+  localStorage.removeItem('cart');
+  cartCount.textContent = 0;
+  showCartItems();
 };
+
+// ✅ Close modal
+closeModal.onclick = () => modal.style.display = "none";
 
 // ✅ Open & Close Cart Panel
 cartIcon.onclick = () => cartPanel.classList.add('show');
@@ -100,3 +107,14 @@ closeCart.onclick = () => cartPanel.classList.remove('show');
 
 // ✅ Run when page loads
 showCartItems();
+
+
+// 🔹 Logout functionality
+const logoutBtn = document.getElementById('logoutBtn');
+
+logoutBtn.addEventListener('click', () => {
+  alert('👋 You have logged out!');
+  localStorage.removeItem('currentUser'); // remove user
+  window.location.href = 'index.html'; // redirect
+});
+
