@@ -15,6 +15,7 @@ header {
   align-items: center;
   padding: 15px 30px;
   flex-wrap: wrap; /* Responsive layout for small screens */
+  box-shadow: 1px 0px 10px 0px rgb(41, 40, 40);
 }
 
 /* ✅ Right-side section (Cart + Buttons) */
@@ -22,6 +23,7 @@ header {
   display: flex;
   align-items: center;
   gap: 15px;
+  
 }
 
 /* ✅ Cart icon */
@@ -50,6 +52,12 @@ header {
   padding: 2px 6px;
   margin-left: 4px;
   font-size: 13px;
+}
+
+.card:hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: translateY(-5px);   /* Lift the card slightly upward */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);   /* Add a soft shadow for 3D effect */
 }
 
 /* ✅ Buttons (Login + Register) */
@@ -225,6 +233,7 @@ footer {
   padding: 15px 0;
   margin-top: 30px;
   font-size: 14px;
+  box-shadow:-1px 0px 8px 0px rgb(65, 64, 64);
 }
 
 /* ✅ Footer Links */
