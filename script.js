@@ -9,10 +9,6 @@ const totalPriceEl = document.getElementById('totalPrice');
 const checkoutBtn = document.getElementById('checkoutBtn');
 
 // ✅ Get cart data from localStorage (if empty → make new array)
-// ✅ Get cart data from localStorage (if empty → make new array)
-// ✅ Get cart data from localStorage (if empty → make new array)
-
-
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 cartCount.textContent = cart.length;
 
