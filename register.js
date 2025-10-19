@@ -14,6 +14,10 @@ registerForm.addEventListener('submit', function (e) {
   }
 
   // Save username & password
+  // Save username & password
+  // Save username & password
+  // Save username & password
+  // Save username & password
   localStorage.setItem(userName.value, password.value);
 
   alert('✅ User registered successfully!');

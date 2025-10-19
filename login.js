@@ -14,5 +14,8 @@ loginForm.addEventListener('submit', function (e) {
     window.location.href = "index.html";
   } else {
     alert('⚠️ Invalid Password!');
+    alert('⚠️ Invalid Password!');
+    alert('⚠️ Invalid Password!');
+    alert('⚠️ Invalid Password!');
   }
 });
